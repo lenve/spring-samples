@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.javaboy.demo.Dog" id="dog01">
+        <property name="name" value="小黑"/>
+    </bean>
+    <bean class="org.javaboy.demo.Cat" id="cat01">
+        <property name="name" value="小白"/>
+    </bean>
+    <bean class="org.javaboy.demo.User" id="user">
+        <!--通过 set 方法去注入值，本质上，这里最终会调用到对应的 set 方法-->
+        <property name="name" value="javaboy"/>
+        <property name="address" value="深圳"/>
+        <property name="age" value="99"/>
+        <!--ref 表示引用一个外部的 Bean，一个外部对象-->
+        <property name="dog" ref="dog01"/>
+        <property name="cats">
+            <list>
+                <bean class="org.javaboy.demo.Cat">
+                    <property name="name" value="小花"/>
+                </bean>
+                <ref bean="cat01"/>
+            </list>
+        </property>
+        <property name="favorites">
+            <array>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>乒乓球</value>
+            </array>
+        </property>
+        <property name="info">
+            <map>
+                <entry key="nation" value="汉族"/>
+                <entry key="edu" value="本科"/>
+            </map>
+        </property>
+        <property name="job">
+            <props>
+                <prop key="salary">15000</prop>
+                <prop key="position">Java工程师</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.javaboy.demo.Dog" id="dog01">
+        <property name="name" value="小黑"/>
+    </bean>
+    <bean class="org.javaboy.demo.Cat" id="cat01">
+        <property name="name" value="小白"/>
+    </bean>
+
+    <bean class="org.javaboy.demo.Dog" id="dog02" p:name="小黄" p:color="黄色"/>
+
+    <bean class="org.javaboy.demo.User" id="user">
+        <!--通过下标去设置参数-->
+<!--        <constructor-arg index="0" value="lisi"/>-->
+        <constructor-arg name="name" value="lisi"/>
+        <constructor-arg name="address" value="广州"/>
+        <constructor-arg name="age" value="99"/>
+        <constructor-arg name="cats">
+            <list>
+                <ref bean="cat01"/>
+                <bean class="org.javaboy.demo.Cat">
+                    <property name="name" value="小花"/>
+                </bean>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="dog" ref="dog01"/>
+        <constructor-arg name="favorites">
+            <array>
+                <value>足球</value>
+                <value>篮球</value>
+            </array>
+        </constructor-arg>
+        <constructor-arg name="info">
+            <map>
+                <entry key="gender" value="男"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg name="job">
+            <props>
+                <prop key="position">Java工程师</prop>
+                <prop key="salary">15000</prop>
+            </props>
+        </constructor-arg>
+    </bean>
+
+</beans>

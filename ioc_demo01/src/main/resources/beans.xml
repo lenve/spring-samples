@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--这个就是 Spring 的配置文件，我们需要将哪些 Bean 注册到 Spring 容器中，就可以在这里进行配置-->
+    <!--向 Spring 容器注册一个 Dog Bean，Bean 的名字是 dog-->
+    <bean class="org.javaboy.demo.Dog"/>
+    <bean class="org.javaboy.demo.Dog"/>
+    <bean class="org.javaboy.demo.Dog"/>
+</beans>
