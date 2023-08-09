@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans default-autowire="constructor">
+        <bean class="org.javaboy.demo.Cat" id="cat">
+            <property name="name" value="小花"/>
+            <property name="color" value="彩色"/>
+        </bean>
+        <bean class="org.javaboy.demo.Cat" id="cat2">
+            <property name="name" value="小菜"/>
+        </bean>
+        <bean class="org.javaboy.demo.User" id="user" autowire="default">
+            <property name="name" value="张三"/>
+            <property name="age" value="99"/>
+        </bean>
+    </beans>
+</beans>
