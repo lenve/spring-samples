@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans profile="dev">
+        <bean class="org.javaboy.demo.DataSource">
+            <property name="username" value="dev"/>
+            <property name="password" value="dev"/>
+            <property name="url" value="jdbc:mysql:///dev"/>
+        </bean>
+    </beans>
+
+    <beans profile="prod">
+        <bean class="org.javaboy.demo.DataSource">
+            <property name="username" value="prod"/>
+            <property name="password" value="prod"/>
+            <property name="url" value="jdbc:mysql:///prod"/>
+        </bean>
+    </beans>
+</beans>
