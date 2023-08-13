@@ -13,6 +13,6 @@ import org.springframework.stereotype.Controller;
  * @gitee：https://gitee.com/lenve
  */
 @Configuration
-@ComponentScan(basePackages = "org.javaboy.demo",useDefaultFilters = false,includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = Controller))
+@ComponentScan(basePackages = "org.javaboy.demo",useDefaultFilters = false,includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = Controller.class))
 public class JavaConfig {
 }
