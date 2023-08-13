@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.javaboy.demo.Animal" id="animal">
+        <property name="category" value="犬科"/>
+    </bean>
+    <bean class="org.javaboy.demo.Dog" id="dog1" parent="animal">
+        <property name="name" value="小黄"/>
+        <property name="age" value="9"/>
+    </bean>
+    <bean class="org.javaboy.demo.Dog" id="dog2" parent="animal">
+        <property name="name" value="小黑"/>
+        <property name="age" value="3"/>
+    </bean>
+</beans>
