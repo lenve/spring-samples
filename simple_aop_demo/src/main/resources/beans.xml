@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean class="org.javaboy.demo.CalculatorAdvice" id="calculatorAdvice"/>
+    <bean class="org.javaboy.demo.CalculatorImpl" id="calculator"/>
+    <aop:config>
+        <!--相当于就是拦截点，因为我们将来要执行很多方法，有的方法可能不需要拦截，有的方法需要拦截，这里就是筛选出来需要拦截的方法-->
+        <!--execution 是一种完全零侵入的筛选方式-->
+        <!--如下配置表示拦截返回值为 int 类型，方法名为 add 且方法参数为两个 int 的方法-->
+        <aop:pointcut id="pc1" expression="execution(int org.javaboy.demo.CalculatorImpl.add(int,int))"/>
+        <!--pointcut 是配置要拦截的方法，advice-ref 则是配置拦截下来之后要具体做的事情-->
+        <aop:advisor pointcut-ref="pc1" advice-ref="calculatorAdvice"/>
+    </aop:config>
+</beans>

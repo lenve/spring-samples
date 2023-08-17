@@ -16,6 +16,6 @@ public class CglibDemo {
         enhancer.setCallback(new CalculatorProxy());
         Calculator calculator = (Calculator) enhancer.create();
         System.out.println("calculator.getClass() = " + calculator.getClass());
-        calculator.minus(3, 4);
+//        calculator.minus(3, 4);
     }
 }

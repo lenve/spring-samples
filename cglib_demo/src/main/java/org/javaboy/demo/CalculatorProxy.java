@@ -10,7 +10,8 @@ import java.lang.reflect.Method;
  * @site：http://www.javaboy.org
  * @微信公众号：江南一点雨
  * @github：https://github.com/lenve
- * @gitee：https://gitee.com/lenve public class CalculatorProxy extends Calculator{
+ * @gitee：https://gitee.com/lenve
+ * public class CalculatorProxy extends Calculator{
  * int add(int a,int b){
  * //xxxx
  * super.add(a,b);
