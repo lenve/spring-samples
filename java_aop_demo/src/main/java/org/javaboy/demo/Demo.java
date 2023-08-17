@@ -1,6 +1,5 @@
 package org.javaboy.demo;
 
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
