@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--这里定义出来的 user2、user3、user4 其实就是别名-->
+    <bean class="org.javaboy.demo.User" id="user" name="user2,user3,user4"/>
+    <alias name="user4" alias="user5"/>
+    <alias name="user5" alias="user6"/>
+    <alias name="user6" alias="user7"/>
+</beans>
