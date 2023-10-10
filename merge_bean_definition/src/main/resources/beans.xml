@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.javaboy.demo.Animal" id="animal">
+        <property name="category" value="犬科"/>
+    </bean>
+    <bean class="org.javaboy.demo.Dog" id="dog" parent="animal">
+        <property name="name" value="小黄"/>
+<!--        <property name="category" value="123"/>-->
+    </bean>
+
+    <bean class="org.javaboy.demo.User" id="user">
+        <property name="name" value="张三"/>
+        <property name="dog">
+            <bean class="org.javaboy.demo.Dog">
+                <property name="name" value="小黑"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
