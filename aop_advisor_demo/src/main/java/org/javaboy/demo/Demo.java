@@ -1,6 +1,5 @@
 package org.javaboy.demo;
 
-import org.javaboy.demo.service.BookService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -15,8 +14,6 @@ public class Demo {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig.class);
         ICalculator calculator = ctx.getBean(ICalculator.class);
         calculator.add(3, 4);
-        BookService bs = ctx.getBean(BookService.class);
-        System.out.println("bs.getClass() = " + bs.getClass());
         LogAspect logAspect = ctx.getBean(LogAspect.class);
         System.out.println("logAspect.getClass() = " + logAspect.getClass());
     }
